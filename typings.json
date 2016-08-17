@@ -1,0 +1,5 @@
+{
+  "name": "jschannel-typings",
+  "main": "index.d.ts",
+  "dependencies": {}
+}
