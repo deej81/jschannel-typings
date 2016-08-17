@@ -19,16 +19,16 @@ declare interface ITransaction {
     error(msg:string, description: string);
 }
 
-export class IChannel {
+export interface IChannel {
     call(options: IChannelCallOptions): void;
     bind(method: string, func:(transaction:ITransaction, data: any) => void): void;
 }
 
-export class JSChannel {
+declare interface IJSChannel {
     build(options: IChannelBuildOptions): IChannel;
 }
 
-export var Channel: JSChannel;
+export var Channel: IJSChannel;
 
 
 
