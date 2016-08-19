@@ -13,6 +13,11 @@ declare interface IChannelCallOptions {
     error?: (err) => void;
 }
 
+declare interface IChannelBindOptions {
+    method: string;
+    func:(transaction:ITransaction, data: any) => void;
+}
+
 declare interface ITransaction {
     complete(data:any): void;
     delayReturn(delayed: boolean);
@@ -21,7 +26,7 @@ declare interface ITransaction {
 
 export interface IChannel {
     call(options: IChannelCallOptions): void;
-    bind(method: string, func:(transaction:ITransaction, data: any) => void): void;
+    bind(options: IChannelBindOptions): void;
 }
 
 declare interface IJSChannel {
