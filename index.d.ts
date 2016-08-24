@@ -28,7 +28,11 @@ declare interface IJSChannel {
     build(options: IChannelBuildOptions): IChannel;
 }
 
-export var Channel: IJSChannel;
+declare module "jschannel" {
+    export = Channel;
+}
+
+declare var Channel: IJSChannel;
 
 
 
